@@ -1,0 +1,111 @@
+.contact-container {
+    
+    display: flex;
+
+    .contact-image {
+
+        flex: 0 0 35%;
+        margin-left: 15%;
+        margin-top: 18%;
+
+        img {
+            width: 50%;
+            height: 50%;
+        }
+    }
+
+    .contact-title {
+
+        margin-bottom: 5%;
+        margin-top: 10%;
+        color: #131f49;
+        margin-left: -1%;
+
+    }
+
+    .contact-content {
+
+        flex: 1;
+
+        textarea {
+            height: 10em;
+            border-radius: 5px;
+            padding: 0.8% 0.5%;
+            font-size: 100%;
+            margin-bottom: 3%;
+            width: 66%;
+            box-shadow: 1px 2px #F1F1F1;
+        }
+
+        input {
+            padding: 6px 3px;
+            margin-bottom: 2%;
+            border-radius: 5px;
+            width: 66%;
+            font-size: 80%;
+            box-shadow: 1px 2px #F1F1F1;
+        }
+
+        p {
+            margin-bottom: 2%;
+        }
+
+        ::placeholder {
+            font-size: 90%;
+        }
+
+        button {
+            text-transform: uppercase;
+            background-color: #f15a2e;
+            color: white;
+            padding: 2% 30.5%;
+            float: left;
+            transition: color 0.1s ease-in;
+            margin-bottom: 10%;
+            box-shadow: 1px 2px #F1F1F1;
+        }
+
+        button:hover {
+            background-color: #DC542D;
+        }
+    }
+
+    @media (max-width: 769px) {
+
+        .contact-image {
+            display: none;
+        }
+
+        .contact-content {
+
+            margin-left: 5%;
+            margin-bottom: 20%;
+            margin-top: 10%;
+
+            .contact-title {
+                margin-left: 20%;
+                margin-bottom: 10%;
+            }
+
+            button {
+                padding: 3% 42.5%;
+                margin-top: 2%;
+                margin-bottom: 2%;
+            }
+
+            input {
+                width: 95%;
+            }
+
+            textarea {
+                width: 95%;
+            }
+
+        }
+
+
+
+    }
+
+
+}

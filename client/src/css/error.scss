@@ -1,0 +1,28 @@
+.error {
+    background: $background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 86px);
+    @include breakpoint(laptop) {
+        min-height: calc(100vh - 74px);
+    }
+    div {
+        max-width: 60%;
+        padding: 0 2rem;
+        @include breakpoint(tablet) {
+            max-width: 100%;
+        }
+        h1 {
+            padding-bottom: 1rem;
+        }
+        p {
+            padding: 2rem 0;
+        }
+        a {
+            @include breakpoint(tablet) {
+                margin: auto;
+            }
+        }
+    }
+}

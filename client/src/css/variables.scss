@@ -1,0 +1,48 @@
+// Colours
+$primary: #f15a2e;
+$secondary: #202020;
+$dark-blue: #131f49;
+$white: #ffffff;
+$yellow: #fcc814;
+$black: #000000;
+$background: #f7f0e8;
+$focused: #1b1b1b;
+$light-grey: #b1b1b1;
+$light-yellow: #fff6da;
+$light-orange: #fad4ba;
+
+// Fonts
+
+body {
+    font-family: 'Karla', sans-serif;
+}
+$body: 'Karla', sans-serif;
+$heading: 'Rubik', sans-serif;
+
+//  Navbar Height
+$navbar: 86px;
+$navbar-mobile: 74px;
+
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media (max-width: 1440px) {
+            @content;
+        }
+    } @else if $point == laptop {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    } @else if $point == tablet {
+        @media (max-width: 768px) {
+            @content;
+        }
+    } @else if $point == mobile {
+        @media (max-width: 500px) {
+            @content;
+        }
+    } @else {
+        @media ($point) {
+            @content;
+        }
+    }
+}

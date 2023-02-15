@@ -1,0 +1,557 @@
+#profile {
+    background: $background;
+    .header {
+        padding: 3rem 2rem;
+        // height: 16rem;
+        // display: flex;
+        // align-items: flex-end;
+        .header-container {
+            width: 50%;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            justify-content: center;
+            grid-gap: 3rem;
+            color: $white;
+
+            @include breakpoint(tablet) {
+                width: 100%;
+                text-align: center;
+                grid-template-columns: 1fr;
+            }
+            h3 {
+                padding-bottom: 1rem;
+            }
+            .profile-image-container {
+                img {
+                    cursor: pointer;
+                }
+            }
+            button {
+                margin-top: 1rem;
+            }
+        }
+    }
+    .profile-links-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        justify-content: center;
+        padding-top: 3rem;
+        align-items: center;
+        .link-container {
+            background: $secondary;
+            border-right: solid 1px $white;
+            a {
+                display: block;
+                color: $white;
+                padding: 1rem 2rem;
+                text-transform: uppercase;
+                font-weight: bold;
+                transition: 150ms ease-in;
+
+                text-align: center;
+
+                @include breakpoint(mobile) {
+                    padding: 1rem 0.25rem;
+                }
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+            &:first-child {
+                border-radius: 1.5rem 0 0 1.5rem;
+                @include breakpoint(mobile) {
+                    border-radius: 0;
+                }
+            }
+            &:last-child {
+                border-right: none;
+                border-radius: 0 1.5rem 1.5rem 0;
+                @include breakpoint(mobile) {
+                    border-right: none;
+                    border-radius: 0;
+                }
+            }
+        }
+        @include breakpoint(mobile) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+    .profile-body {
+        // background: $background;
+        padding-bottom: 3rem;
+        .section {
+            padding-top: 3rem;
+            .section-title {
+                background: $secondary;
+                display: inline-block;
+                color: $white;
+                padding: 0.5rem 3rem;
+            }
+            .content {
+                width: 90%;
+                padding: 4rem 2rem;
+                // border-bottom: solid 1px $yellow;
+                font-family: $body;
+                @include breakpoint(tablet) {
+                    width: 100%;
+                }
+            }
+        }
+
+        .saved-recipes-container {
+            padding: 4rem 2rem;
+            width: 90%;
+            margin: auto;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(3, 300px);
+            grid-gap: 1.5rem;
+            @include breakpoint(laptop) {
+                grid-template-columns: repeat(3, 250px);
+                width: 100%;
+            }
+            @include breakpoint(tablet) {
+                grid-template-columns: repeat(2, 225px);
+            }
+            @include breakpoint(mobile) {
+                grid-template-columns: repeat(1, 275px);
+            }
+            .saved-recipe-container {
+                // flex: 1;
+                // display: flex;
+                // flex-basis: 33.333333%;
+                // margin: 0 0.75rem 0 0.75rem;
+                transition: 150ms ease-in;
+                .saved-recipe {
+                    height: 300px;
+                    position: relative;
+                    @include breakpoint(laptop) {
+                        height: 250px;
+                    }
+                    @include breakpoint(tablet) {
+                        height: 225px;
+                    }
+                    @include breakpoint(mobile) {
+                        height: 300px;
+                    }
+                    .saved-recipe-image {
+                        width: 100%;
+                        height: 100%;
+                        img {
+                            border-radius: 0.75rem;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .overlay {
+                        border-radius: 0.75rem;
+                        background: $black;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        opacity: 0.25;
+                        top: 0;
+                        left: 0;
+                    }
+                    .saved-recipe-content {
+                        margin: 2rem;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        color: $white;
+                        text-transform: capitalize;
+                        h3 {
+                            font-weight: 400;
+                            letter-spacing: 0.1rem;
+                            padding-bottom: 1rem;
+                        }
+                        p {
+                            font-style: italic;
+                        }
+                    }
+                }
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .general {
+            .row {
+                padding-bottom: 4rem;
+                h4 {
+                    padding-bottom: 2rem;
+                    font-weight: 500;
+                }
+                h5 {
+                    text-align: center;
+                    padding-bottom: 2rem;
+                }
+                .options {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    justify-content: center;
+                    grid-gap: 5rem;
+                    &.three {
+                        grid-template-columns: auto auto auto;
+                        @include breakpoint(tablet) {
+                            grid-template-columns: auto auto;
+                        }
+                    }
+                    @include breakpoint(tablet) {
+                        grid-gap: 3rem;
+                    }
+                    @include breakpoint(mobile) {
+                        grid-gap: 2rem;
+                    }
+                    .option-container {
+                        cursor: pointer;
+                        text-transform: capitalize;
+                        .option-image {
+                            background: white;
+                            padding: 3rem;
+                            border-radius: 50%;
+                            // box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+                            //     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+                            border: solid 3px $yellow;
+                            transition: 150ms ease-in;
+                            margin-bottom: 1.5rem;
+                            @include breakpoint(tablet) {
+                                padding: 2rem;
+                            }
+                            @include breakpoint(mobile) {
+                                padding: 1.5rem;
+                            }
+                            &:hover {
+                                background: $light-yellow;
+                            }
+                            &.selected {
+                                background: $light-yellow;
+                            }
+                            img {
+                                width: 80px;
+                                @include breakpoint(mobile) {
+                                    width: 50px;
+                                }
+                            }
+                        }
+                        p {
+                            font-size: 1.5rem;
+                            text-align: center;
+                            font-weight: bold;
+                            @include breakpoint(tablet) {
+                                font-size: 1.25rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .settings {
+            h4 {
+                padding-bottom: 2rem;
+            }
+            .row {
+                padding-bottom: 2rem;
+                .delete-wrapper {
+                    display: flex;
+                    align-items: center;
+                    @include breakpoint(mobile) {
+                        display: block;
+                    }
+                    .button {
+                        margin-left: 2rem;
+                        @include breakpoint(mobile) {
+                            width: 100%;
+                            margin: 1rem auto 0;
+                        }
+                    }
+                }
+            }
+            .half {
+                @include breakpoint(tablet) {
+                    grid-template-columns: 1fr;
+                }
+                label {
+                    text-transform: uppercase;
+                    color: $primary;
+                    font-weight: bold;
+                    padding-bottom: 0.75rem;
+                    display: block;
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+        .add-custom-recipe-container {
+            border: $primary 2px solid;
+            border-radius: 0.75rem;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 2rem;
+            height: 300px;
+            @include breakpoint(laptop) {
+                height: 250px;
+            }
+            @include breakpoint(tablet) {
+                height: 225px;
+            }
+            @include breakpoint(mobile) {
+                height: 275px;
+            }
+            div {
+                padding-bottom: 1rem;
+                svg {
+                    background: $primary;
+                    color: $white;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    padding: 1rem;
+                }
+            }
+        }
+        .recipe-form-container {
+            background: $white;
+            padding: 2rem;
+            margin: 4rem auto;
+            width: 70%;
+            @include breakpoint(laptop) {
+                margin: 2rem auto;
+                padding: 2rem;
+                width: 80%;
+            }
+            @include breakpoint(tablet) {
+                width: 90%;
+                padding: 2rem 1rem;
+            }
+            .title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .table-title {
+                padding: 2rem 0 1rem;
+                border-bottom: 1px solid $yellow;
+                font-weight: normal;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .pagination {
+                padding-top: 2rem;
+                display: flex;
+                justify-content: center;
+                button {
+                    background: $primary;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    color: $white;
+                    margin-right: 1rem;
+                    opacity: 0.5;
+                    transition: 50ms ease-in;
+                    &:hover {
+                        opacity: 0.75;
+                    }
+                    &.active {
+                        opacity: 1;
+                    }
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+            }
+            label {
+                text-transform: uppercase;
+                color: $primary;
+                font-weight: bold;
+                padding-bottom: 0.75rem;
+                display: block;
+                letter-spacing: 0.5px;
+            }
+            .back-container {
+                display: flex;
+                align-items: center;
+                svg {
+                    margin-right: 0.75rem;
+                }
+                span {
+                    font-weight: bold;
+                    font-size: 1rem;
+                    transition: 50ms ease-in;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+            .category-container {
+                .link-text {
+                    color: $primary;
+                    padding: 0 1rem;
+                    &:last-of-type {
+                        padding-right: 0;
+                    }
+                }
+            }
+            .customize-title {
+                padding: 2rem 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                a {
+                    @include breakpoint(mobile) {
+                        margin-top: 1rem;
+                        display: block;
+                    }
+                }
+                @include breakpoint(mobile) {
+                    display: block;
+                }
+            }
+            input,
+            textarea,
+            div {
+                font-family: inherit;
+                font-size: 1rem;
+            }
+            // .select-container,
+            // .dropdown-ingredients {
+            //     position: relative;
+            //     cursor: pointer;
+            //     .dropdown-container {
+            //         width: 100%;
+            //         box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+            //             rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            //         border-radius: 0.5rem;
+            //         & div {
+            //             background: $white;
+            //             padding: 0.75rem;
+            //             // transition: 100ms ease-in;
+            //             // background: $white;
+            //             &:hover {
+            //                 background: $primary;
+            //                 color: $white;
+            //             }
+            //             &:first-of-type {
+            //                 border-top-left-radius: 0.5rem;
+            //                 border-top-right-radius: 0.5rem;
+            //             }
+            //             &:last-of-type {
+            //                 border-bottom-left-radius: 0.5rem;
+            //                 border-bottom-right-radius: 0.5rem;
+            //             }
+            //         }
+            //     }
+            // }
+            .thumb {
+                display: flex;
+                // border-radius: 2px;
+                // border: 1px solid #eaeaea;
+                // margin-bottom: 8px;
+                // margin-right: 8px;
+                width: 100%;
+                height: 100%;
+                // justify-content: center;
+                // padding: 4px;
+
+                .thumb__inner {
+                    display: flex;
+                    width: 200px;
+                    height: 200px;
+                    position: relative;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: 0.5rem;
+                        margin-bottom: 1rem;
+                    }
+                    button {
+                        position: absolute;
+                        padding: 0.4rem;
+                        top: 0;
+                        right: 0;
+                        z-index: 0;
+
+                        svg {
+                            background: $black;
+                            border-radius: 50%;
+                            padding: 0.2rem;
+                        }
+                    }
+                }
+            }
+            .half {
+                @include breakpoint(tablet) {
+                    grid-template-columns: 1fr;
+                }
+            }
+            .dropzone {
+                margin-top: 1rem;
+                width: max-content;
+                outline: none;
+                display: flex;
+            }
+            .button-container {
+                padding-top: 1rem;
+                display: flex;
+                justify-content: space-between;
+                @include breakpoint(mobile) {
+                    display: block;
+                    div > button {
+                        width: 100%;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+            .row {
+                margin-bottom: 1.25rem;
+            }
+            // .selected-ingredient-container {
+            //     display: flex;
+            //     flex-wrap: wrap;
+            //     .selected-ingredient {
+            //         display: flex;
+            //         align-items: center;
+            //         padding: 0.75rem 1.25rem;
+            //         border-radius: 1.25rem;
+            //         border: solid 1.75px $primary;
+            //         margin-bottom: 1rem;
+            //         margin-right: 1rem;
+            //         div {
+            //             margin-right: 1rem;
+            //         }
+            //     }
+            // }
+            .steps {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 0.75rem;
+
+                span {
+                    margin-bottom: 1rem;
+                }
+
+                .textarea-container {
+                    display: grid;
+                    grid-template-columns: 11fr auto;
+                    grid-gap: 10px;
+                }
+            }
+            .share-checkbox {
+                display: flex;
+                input {
+                    width: auto;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+}

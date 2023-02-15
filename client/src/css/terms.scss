@@ -1,0 +1,55 @@
+.terms-container {
+
+    .terms-title {
+        margin-left: 24%;
+        margin-bottom: 3%;
+        margin-top: 3%;
+        color: #131f49;
+    }
+ 
+    .terms-content {
+
+        width: 50%;
+        margin-left: 25%;
+        margin-bottom: 2%;
+    
+        
+        br {
+            display: block;
+            content: '';
+            margin: 2em;
+            line-height: 150%;
+        }
+        
+        .sub-title {
+            font-weight: bold;
+        }
+    
+    
+    }
+
+    @media (max-width: 769px) {
+    
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 2%;
+
+        .terms-content {
+            width: 100%;
+            margin-left: 0%;
+            margin-bottom: 10%;
+            margin-top: 10%;
+        }
+
+        .terms-title {
+            margin-left: 0%;
+            margin-top: 10%;
+        }
+        
+}
+
+}
+
+
+
+
